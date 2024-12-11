@@ -36,11 +36,14 @@ Feel free to use this project as a learning resource for BuckshotPlusPlus! It sh
 
 ## 🎮 Usage
 
-1. Install BuckshotPlusPlus from the [official repository](https://github.com/BuckshotPlusPlus/BuckshotPlusPlus)
+1. Install BuckshotPlusPlus from the npm command or the [official repository](https://github.com/BuckshotPlusPlus/BuckshotPlusPlus)
+```bash
+npm install -g buckshotplusplus
+```
 2. Clone this repository
 3. Run the project:
 ```bash
-BuckshotPlusPlus.exe main.bpp
+bpp main.bpp
 ```
 
 ## 🎨 Styling
