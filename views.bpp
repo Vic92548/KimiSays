@@ -1,0 +1,152 @@
+view BaseText {
+    type = "p"
+    font-family = "Inter, sans-serif"
+    margin = "0"
+    color = colors.text-light
+}
+
+view HeadingText:BaseText {
+    type = "h1"
+    font-weight = font-weights.black
+    letter-spacing = "-2px"
+    background = "linear-gradient(135deg, " + colors.primary + " 0%, " + colors.primary-dark + " 50%, " + colors.primary-darker + " 100%)"
+    background-clip = "text"
+    color = "transparent"
+}
+
+view SubtleText:BaseText {
+    color = colors.text-muted
+    font-size = font-sizes.body
+    letter-spacing = "0.5px"
+}
+
+view body {
+    type = "body"
+    content = MainContainer
+    margin = "0"
+    padding = "0"
+    background = "linear-gradient(135deg, " + colors.bg-dark + " 0%, " + colors.bg-darker + " 100%)"
+    min-height = "100vh"
+    font-family = "Inter, sans-serif"
+    overflow-x = "hidden"
+}
+
+view MainContainer {
+    type = "div"
+    content = [Title, QuoteCard, ButtonContainer]
+    width = "100%"
+    display = "flex"
+    flex-direction = "column"
+    align-items = "center"
+    justify-content = "center"
+    height = "calc(100vh - 48px)"
+    padding = "24px"
+}
+
+view Title {
+    type = "div"
+    content = [TitleText, SubtitleText]
+    margin-bottom = "64px"
+    text-align = "center"
+    transition = transitions.transform
+    onmouseover = TitleHover
+    onmouseout = TitleUnhover
+}
+
+view TitleText:HeadingText {
+    content = "🏎️ Bwoah"
+    font-size = font-sizes.h1
+    margin-bottom = "16px"
+    text-shadow = "0 20px 40px rgba(0,0,0,0.15)"
+}
+
+view SubtitleText:SubtleText {
+    content = "Random Kimi Räikkönen Quotes"
+}
+
+view BaseCard {
+    type = "div"
+    background = "rgba(30, 41, 59, 0.8)"
+    backdrop-filter = "blur(20px)"
+    border-radius = "24px"
+    transition = transitions.all
+    border = "1px solid rgba(148, 163, 184, 0.1)"
+}
+
+view QuoteCard:BaseCard {
+    content = [QuoteContent, Attribution]
+    max-width = "800px"
+    width = "100%"
+    padding = "40px"
+    margin-bottom = "48px"
+    box-shadow = shadows.card + ", " + shadows.inset-light
+    position = "relative"
+    onmouseover = QuoteCardHover
+    onmouseout = QuoteCardUnhover
+}
+
+view QuoteContent {
+    type = "div"
+    content = [QuoteIcon, QuoteText]
+    margin-bottom = "24px"
+    position = "relative"
+}
+
+view QuoteIcon {
+    type = "span"
+    content = "❝"
+    font-size = font-sizes.h1
+    color = colors.primary
+    display = "block"
+    margin-bottom = "24px"
+    text-align = "center"
+    opacity = "0.8"
+    transition = transitions.transform
+    onmouseover = QuoteIconHover
+    onmouseout = QuoteIconUnhover
+}
+
+view QuoteText:HeadingText {
+    content = KimiQuote.quote
+    font-size = font-sizes.h2
+    font-weight = font-weights.medium
+    text-align = "center"
+    transition = transitions.all
+}
+
+view Attribution:SubtleText {
+    content = "— Kimi Räikkönen"
+    font-style = "italic"
+    text-align = "right"
+    font-size = font-sizes.small
+}
+
+view ButtonContainer {
+    type = "div"
+    content = RefreshButton
+    text-align = "center"
+    margin-top = "16px"
+}
+
+view BaseButton {
+    type = "button"
+    border = "none"
+    cursor = "pointer"
+    font-family = "Inter, sans-serif"
+    transition = transitions.all
+    onmouseover = ButtonHover
+    onmouseout = ButtonUnhover
+}
+
+view RefreshButton:BaseButton {
+    content = "🏁 Leave Me Alone, I Know What To Do"
+    background = "linear-gradient(135deg, " + colors.primary + " 0%, " + colors.primary-dark + " 100%)"
+    color = colors.text-light
+    font-weight = font-weights.semibold
+    padding = "20px 40px"
+    border-radius = "9999px"
+    font-size = font-sizes.small
+    box-shadow = shadows.button + ", " + shadows.inset-light
+    letter-spacing = "0.5px"
+    onclick = QuoteRefresh
+}

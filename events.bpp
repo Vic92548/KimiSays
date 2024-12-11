@@ -1,0 +1,53 @@
+event TitleHover {
+    Title.transform = "translateY(-5px)"
+}
+
+event TitleUnhover {
+    Title.transform = "translateY(0)"
+}
+
+event QuoteCardHover {
+    QuoteCard.transform = "translateY(-8px)"
+    QuoteCard.box-shadow = shadows.card-hover + ", " + shadows.inset-light-hover
+    QuoteCard.border = "1px solid rgba(148, 163, 184, 0.2)"
+    QuoteCard.background = "rgba(30, 41, 59, 0.9)"
+}
+
+event QuoteCardUnhover {
+    QuoteCard.transform = "translateY(0)"
+    QuoteCard.box-shadow = shadows.card + ", " + shadows.inset-light
+    QuoteCard.border = "1px solid rgba(148, 163, 184, 0.1)"
+    QuoteCard.background = "rgba(30, 41, 59, 0.8)"
+}
+
+event QuoteIconHover {
+    QuoteIcon.transform = "rotate(-10deg)"
+    QuoteIcon.opacity = "1"
+}
+
+event QuoteIconUnhover {
+    QuoteIcon.transform = "rotate(0deg)"
+    QuoteIcon.opacity = "0.8"
+}
+
+event QuoteRefresh {
+    QuoteCard.transform = "translateY(-12px)"
+    QuoteText.content = KimiQuote.quote
+    QuoteText.transform = "scale(0.98)"
+    QuoteCard.transform = "translateY(0)"
+    QuoteText.transform = "scale(1)"
+}
+
+event ButtonHover {
+    RefreshButton.background = "linear-gradient(135deg, " + colors.primary-dark + " 0%, " + colors.primary-darker + " 100%)"
+    RefreshButton.transform = "translateY(-2px)"
+    RefreshButton.box-shadow = shadows.button-hover + ", " + shadows.inset-light-hover
+    RefreshButton.letter-spacing = "1px"
+}
+
+event ButtonUnhover {
+    RefreshButton.background = "linear-gradient(135deg, " + colors.primary + " 0%, " + colors.primary-dark + " 100%)"
+    RefreshButton.transform = "translateY(0)"
+    RefreshButton.box-shadow = shadows.button + ", " + shadows.inset-light
+    RefreshButton.letter-spacing = "0.5px"
+}

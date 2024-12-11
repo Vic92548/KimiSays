@@ -1,0 +1,29 @@
+include "config.bpp"
+include "events.bpp"
+include "views.bpp"
+
+source KimiQuote {
+    url = "https://kimiquotes.pages.dev/api/quote"
+    method = "GET"
+}
+
+meta description {
+    name = "description"
+    content = "Random Kimi Räikkönen F1 quotes generator"
+}
+
+meta viewport {
+    name = "viewport"
+    content = "width=device-width, initial-scale=1.0"
+}
+
+meta charset {
+    charset = "UTF-8"
+}
+
+page index {
+    title = "Kimi Says"
+    fonts = ["https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap"]
+    meta = [charset, description, viewport]
+    body = body
+}

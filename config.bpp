@@ -1,0 +1,44 @@
+data colors {
+    primary = "#3B82F6"
+    primary-dark = "#2563EB"
+    primary-darker = "#1D4ED8"
+    text-light = "#F1F5F9"
+    text-muted = "#94A3B8"
+    bg-dark = "#0F172A"
+    bg-darker = "#1E293B"
+}
+
+data animations {
+    cubic = "cubic-bezier(0.4, 0, 0.2, 1)"
+    duration-normal = "0.3s"
+    duration-slow = "0.4s"
+}
+
+data shadows {
+    card = "0 25px 50px -12px rgba(0, 0, 0, 0.3)"
+    card-hover = "0 30px 60px -12px rgba(0, 0, 0, 0.4)"
+    button = "0 10px 30px -5px rgba(59, 130, 246, 0.5)"
+    button-hover = "0 15px 30px -5px rgba(59, 130, 246, 0.6)"
+    inset-light = "inset 0 2px 4px rgba(255, 255, 255, 0.05)"
+    inset-light-hover = "inset 0 2px 4px rgba(255, 255, 255, 0.1)"
+}
+
+data font-sizes {
+    h1 = "72px"
+    h2 = "32px"
+    body = "20px"
+    small = "18px"
+}
+
+data font-weights {
+    normal = "400"
+    medium = "500"
+    semibold = "600"
+    bold = "700"
+    black = "900"
+}
+
+data transitions {
+    all = "all " + animations.duration-normal + " " + animations.cubic
+    transform = "transform " + animations.duration-normal + " ease"
+}
